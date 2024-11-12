@@ -1,0 +1,99 @@
+Prarent pom:
+https://apisero.com/parent-pom-and-main-project-pom-publish-using-maven-to-exchange/
+
+publish parent project to exchange : 
+follow steps on above url:
+
+
+D:\workspace-zenni\parent-pom>mvn deploy
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------< 1d8e69f6-00a4-4647-a0d0-0d72f6b00015:parent-pom >-----------
+[INFO] Building parent-pom 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+Downloading from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/apache/maven/plugins/maven-deploy-plugin/3.1.0/maven-deploy-plugin-3.1.0.pom
+Downloaded from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/apache/maven/plugins/maven-deploy-plugin/3.1.0/maven-deploy-plugin-3.1.0.pom (8.9 kB at 5.9 kB/s)
+Downloading from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/apache/maven/plugins/maven-deploy-plugin/3.1.0/maven-deploy-plugin-3.1.0.jar
+Downloaded from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/apache/maven/plugins/maven-deploy-plugin/3.1.0/maven-deploy-plugin-3.1.0.jar (39 kB at 49 kB/s)
+[INFO]
+[INFO] --- exchange-mule:0.0.17:exchange-pre-deploy (validate) @ parent-pom ---
+[INFO]
+[INFO] --- install:3.1.0:install (default-install) @ parent-pom ---
+[INFO] Installing D:\workspace-zenni\parent-pom\pom.xml to C:\Users\91971\.m2\repository\1d8e69f6-00a4-4647-a0d0-0d72f6b00015\parent-pom\1.0.0\parent-pom-1.0.0.pom
+[INFO]
+[INFO] --- deploy:3.1.0:deploy (default-deploy) @ parent-pom ---
+Downloading from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.pom
+Downloaded from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.pom (8.0 kB at 14 kB/s)
+Downloading from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/codehaus/plexus/plexus/10/plexus-10.pom
+Downloaded from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/codehaus/plexus/plexus/10/plexus-10.pom (25 kB at 88 kB/s)
+Downloading from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar
+Downloaded from mule-public: https://repository.mulesoft.org/nexus/content/repositories/public/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar (267 kB at 223 kB/s)
+Uploading to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/1.0.0/parent-pom-1.0.0.pom
+Uploaded to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/1.0.0/parent-pom-1.0.0.pom (3.3 kB at 867 B/s)
+Downloading from Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/maven-metadata.xml
+Uploading to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/maven-metadata.xml
+Uploaded to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/maven-metadata.xml (326 B at 134 B/s)
+[INFO]
+[INFO] --- exchange-mule:0.0.17:exchange-deploy (deploy) @ parent-pom ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.462 s
+[INFO] Finished at: 2023-07-18T22:33:27+05:30
+[INFO] ------------------------------------------------------------------------
+[WARNING]
+[WARNING] Plugin validation issues were detected in 1 plugin(s)
+[WARNING]
+[WARNING]  * org.mule.tools.maven:exchange-mule-maven-plugin:0.0.17
+[WARNING]
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING]
+
+D:\workspace-zenni\parent-pom>mvn deploy
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------< 1d8e69f6-00a4-4647-a0d0-0d72f6b00015:parent-pom >-----------
+[INFO] Building parent-pom 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- exchange-mule:0.0.17:exchange-pre-deploy (validate) @ parent-pom ---
+[INFO]
+[INFO] --- install:3.1.0:install (default-install) @ parent-pom ---
+[INFO] Installing D:\workspace-zenni\parent-pom\pom.xml to C:\Users\91971\.m2\repository\1d8e69f6-00a4-4647-a0d0-0d72f6b00015\parent-pom\1.0.0\parent-pom-1.0.0.pom
+[INFO]
+[INFO] --- deploy:3.1.0:deploy (default-deploy) @ parent-pom ---
+Uploading to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/1.0.0/parent-pom-1.0.0.pom
+Uploaded to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/1.0.0/parent-pom-1.0.0.pom (3.3 kB at 875 B/s)
+Downloading from Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/maven-metadata.xml
+Uploading to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/maven-metadata.xml
+Uploaded to Exchange2: https://maven.anypoint.mulesoft.com/api/v2/organizations/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/maven/1d8e69f6-00a4-4647-a0d0-0d72f6b00015/parent-pom/maven-metadata.xml (326 B at 163 B/s)
+[INFO]
+[INFO] --- exchange-mule:0.0.17:exchange-deploy (deploy) @ parent-pom ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.164 s
+[INFO] Finished at: 2023-07-18T22:40:39+05:30
+[INFO] ------------------------------------------------------------------------
+[WARNING]
+[WARNING] Plugin validation issues were detected in 1 plugin(s)
+[WARNING]
+[WARNING]  * org.mule.tools.maven:exchange-mule-maven-plugin:0.0.17
+[WARNING]
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING]
+
+D:\workspace-zenni\parent-pom>
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Add this in your project's pom file :
+<parent>
+	  <groupId>1d8e69f6-00a4-4647-a0d0-0d72f6b00015</groupId>
+	<artifactId>parent-pom</artifactId>
+	<version>1.0.0</version>
+	</parent>
+	
+parent's pom.xml should be in parallel to project(inside workspace folder where you are working)

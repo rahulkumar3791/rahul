@@ -1,0 +1,10 @@
+JSON logger:
+https://blogs.mulesoft.com/dev-guides/how-to-tutorials/json-logging-mule-4/
+
+
+Clone code :
+https://github.com/mulesoft-consulting/json-logger/tree/mule-4.x
+
+1. add pluging if you are getting javadoc error
+    https://stackoverflow.com/questions/13961615/unable-to-find-javadoc-command-maven
+	

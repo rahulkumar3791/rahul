@@ -1,0 +1,183 @@
+
+Find SP in sqldeveloper : 
+DB Connection Name-> other users->XXATC->Packages -> SP Name 
+e.g 
+XXATC.ATC_PN_IND_TT_UTILS_PKG.GET_LAND_LEASE_DATA
+
+XXATC- user
+ATC_PN_IND_TT_UTILS_PKG - package
+SP Name - GET_LAND_LEASE_DATA
+
+
+Example-1
+Input : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="uri://alcatel.com/apc/9.5">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns:configure>
+            <objectName>CTA_LAB_GPON_VLAN_121:1-1-5-1-22-4-1</objectName>
+            <templateName>GVT_GPON_HSI</templateName>
+            <argument>
+                <name>networkCustomerId</name>
+                <value>107</value>
+            </argument>
+            <argument>
+                <name>hsi_svlan</name>
+                <value>121</value>
+            </argument>
+        </ns:configure>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
+DW : 
+%dw 2.0
+output application/xml  writeDeclaration=false
+
+ns soapenv http://schemas.xmlsoap.org/soap/envelope/
+ns ns1 uri://alcatel.com/apc/9.5
+---
+soapenv#Envelope @("xmlns:ns":ns1):
+ {
+          soapenv#Header:{},
+           soapenv#Body :{
+               "ns:configure":{
+    objectName:"CTA_LAB_GPON_VLAN_121:1-1-5-1-22-4-1",
+            templateName:"GVT_GPON_HSI",
+          argument:{
+              name:"networkCustomerId",
+              value:107
+            },
+            argument:{
+              name:"hsi_svlan",
+              value:121
+            }
+        }
+    
+    }
+  }
+  
+  
+Output : 
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="uri://alcatel.com/apc/9.5">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns:configure>
+            <objectName>CTA_LAB_GPON_VLAN_121:1-1-5-1-22-4-1</objectName>
+            <templateName>GVT_GPON_HSI</templateName>
+            <argument>
+                <name>networkCustomerId</name>
+                <value>107</value>
+            </argument>
+            <argument>
+                <name>hsi_svlan</name>
+                <value>121</value>
+            </argument>
+        </ns:configure>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+
+
+
+
+Example-2
+Input : 
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+          <S:Header>
+          <header xmlns="tmf854.v1" xmlns:ns2="sdcNbi">
+           <activityName>consultinfo</activityName>
+           <msgName>GetPerformanceMonitoringDataRequest</msgName>               
+		   <msgType>REQUEST</msgType>
+           <senderURI>soapui</senderURI>
+           <destinationURI>ams95</destinationURI>
+           <communicationPattern>SimpleResponse</communicationPattern>
+           <communicationStyle>RPC</communicationStyle>
+           </header>
+           </S:Header>
+              <S:Body>
+              <ns2:GetPerformanceMonitoringDataRequest xmlns="tmf854.v1" xmlns:ns2="sdcNbi">
+                 <ns2:pmObjectSelect>
+                   <osNm>ams</osNm>
+                   <mdNm>ams</mdNm>
+                   <meNm>MG_LAB01_GNOKIA_ATC</meNm>
+                   <propNm>/Type=ONT/R1.S1.LT1.PON2.ONT1</propNm>
+                 </ns2:pmObjectSelect>
+              <ns2:pmParameterList>
+                   <ns2:pmParameter>
+                   <ns2:pmParameterName>bponOntSerialNumber</ns2:pmParameterName>
+                   </ns2:pmParameter>
+                   <ns2:pmParameter>
+                   <ns2:pmParameterName>gponOntOltsideOpInfoRxOpticalSignalLevel</ns2:pmParameterName>
+                   </ns2:pmParameter>
+                   <ns2:pmParameter>
+                   <ns2:pmParameterName>ifAdminStatus</ns2:pmParameterName>
+                   </ns2:pmParameter>
+                   <ns2:pmParameter>
+                   <ns2:pmParameterName>ifOperStatus</ns2:pmParameterName>
+                   </ns2:pmParameter>
+                   <ns2:pmParameter>
+                   <ns2:pmParameterName>bponOntOpInfoDistance</ns2:pmParameterName>
+                   </ns2:pmParameter>
+                   </ns2:pmParameterList>
+              </ns2:GetPerformanceMonitoringDataRequest>
+              </S:Body>
+</S:Envelope>
+
+
+DW : 
+%dw 2.0
+output application/xml writeDeclaration=false
+ns S http://schemas.xmlsoap.org/soap/envelope/
+ns ns1 tmf854.v1
+ns ns2 sdcNbi
+---
+S#Envelope : {
+
+    S#Header :{
+        header  @("xmlns":ns1,"xmlns:ns2":ns2):{
+        activityName : "consultinfo",
+        msgName:"GetPerformanceMonitoringDataRequest",
+        msgType:"REQUEST",
+        senderURI:"soapui",
+        destinationURI:"ams95",
+        communicationPattern:"SimpleResponse",
+        communicationStyle:"RPC"
+        }
+    },
+   S#Body : {
+       ns2#GetPerformanceMonitoringDataRequest @("xmlns":ns1): {  
+           ns2#pmObjectSelect : "payload1",
+           ns2#pmParameterList : "payload2"
+       }
+
+   }
+
+}
+
+Output : 
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Header>
+    <header xmlns="tmf854.v1" xmlns:ns2="sdcNbi">
+      <activityName>consultinfo</activityName>
+      <msgName>GetPerformanceMonitoringDataRequest</msgName>
+      <msgType>REQUEST</msgType>
+      <senderURI>soapui</senderURI>
+      <destinationURI>ams95</destinationURI>
+      <communicationPattern>SimpleResponse</communicationPattern>
+      <communicationStyle>RPC</communicationStyle>
+    </header>
+  </S:Header>
+  <S:Body>
+    <ns2:GetPerformanceMonitoringDataRequest xmlns:ns2="sdcNbi" xmlns="tmf854.v1">
+      <ns2:pmObjectSelect>payload1</ns2:pmObjectSelect>
+      <ns2:pmParameterList>payload2</ns2:pmParameterList>
+    </ns2:GetPerformanceMonitoringDataRequest>
+  </S:Body>
+</S:Envelope>
+
+

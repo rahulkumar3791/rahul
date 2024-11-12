@@ -1,0 +1,86 @@
+
+Mulesoft integration with salesforce:
+SOQL- Salesforce Object Query Language
+
+dataloader.io - import and export data to/from salesforce using dataloader.io 
+you can import data from either box, dropbox, sftp, ftp or files etc in salesforce using dataloader.io
+
+-----------------------------------------------------------------------------------------------------------------------------
+signup as a developer account: 
+https://developer.salesforce.com/signup
+
+upsert connector - insert or update record if record is already there in object then update otherwise insert in to the object.
+create connector- create/insert the records in salesforce
+
+Sandboxes - you can create any number of sandbox(like dev, qa, prod) in salesforce. 
+
+%dw 2.0
+output application/java
+---
+{
+  "Name": "Rahul Kumar",
+  "Active__c": "active",
+  "Industry": "software",
+  "Phone": "9000000090",
+  "site": "anypointplatform.com"
+}
+
+🚨If you want to learn mulesoft and start your career. Here are some list of YouTube channels..🚨
+
+
+👉🏻 Sravan lingam - https://lnkd.in/gv6_dXA5
+👉🏻Ashish pardhi - https://lnkd.in/gw7Qt3TC
+👉🏻 Integration world - https://lnkd.in/gb_hJSzH
+👉🏻 Jitendra bafna - https://lnkd.in/g9nRFxFU
+👉🏻 Tech lightning - https://lnkd.in/gHSvNUVq
+👉🏻 Mule by chinna - https://lnkd.in/gzrsQ3Xw
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Working connection details : 
+
+Salesforce rahul account-
+created on 16/06/2024 (from email - kumarrahul.info1991@gmail.com) 
+username: rahulkumar@ps.sandbox
+pass - Rahul@$00211
+security token - ZXXDIT9Eqn8Rs1ekCxovQ5EF
+login url- https://pssandbox7-dev-ed.develop.my.salesforce.com
+
+Authoroizarion URL - https://login.salesforce.com/services/Soap/u/57.0
+
+Default timeout in salesforce:
+Deafult- 10 seconds
+maximum -  120 seconds ( 2minutes)
+
+
+create record in SF:
+
+%dw 2.0
+output application/json
+---
+[{
+	"name": "Rahul Kumar ",
+	"billingAddress": "2 Place Jussieu",
+	"billingCity": "Paris",
+	"billingCountry": "France",
+	"billingPostalCode": "75251",
+	"billingState": "HR"
+},
+ {
+	"name": "Nitish Kumar Kumar ",
+	"billingAddress": "2 Place Jussieu",
+	 "billingCity": "Paris",
+	  "billingCountry": "France",
+	  "billingPostalCode": "75251",
+	  "billingState": "BH"
+	}]
+	
+	
+upsert- on which field you want to update or insert pass the external id field in connector :
+
+
+Working connection details : 
+<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="b6413eaa-8728-4df1-b9ae-57103d5f8fdd" >
+		<salesforce:basic-connection username="rahulkr@ps.sandbox" password="Rahul@$00211" securityToken="ZXXDIT9Eqn8Rs1ekCxovQ5EF" />
+	</salesforce:sfdc-config>
